@@ -1,0 +1,22 @@
+<!--添加属性注入依赖  -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-configuration-processor</artifactId>
+	<optional>true</optional>
+</dependency>
+
+代码用法:
+	@Component
+	@ConfigurationProperties(prefix="user")
+	public class User {
+	//@Value("${user.id}")
+	private Integer id;
+	//@Value("${user.username}")
+	private String username;
+	//@Value("${user.age}")
+	private Integer age;
+	//@Value("${user.sex}")
+	private String sex;
+
+	特别注入需要SET/GET方法支持
+}
